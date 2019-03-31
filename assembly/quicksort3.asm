@@ -1,21 +1,18 @@
 .data
 
-
 array:		.word 4,7,8,6,10,5,9,3,2,1
 size:		.word 40 #array size
-p:		.word 0	#pivot index
-l:		.word 0 #left index
-r:		.word 0 #right index
-i:		.word 0 #current index
 spc:		.asciiz " "
 nl:		.asciiz "\n"
+
 
 .text
 
 main:	
 	la $t0, array	
-	lw $a0, p    #l = 0
-	lw $a1, size #r = 40
+	
+	addi $a0, $zero, 0 #l = 0
+	lw $a1, size       #r = 40
 	
 	jal quicksort
 	
